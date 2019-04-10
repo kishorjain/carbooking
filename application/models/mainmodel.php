@@ -9,7 +9,7 @@ class Mainmodel extends CI_Model{
         $query = $this->db->get('cardetails');
         return $query->result();
     }
-    function getcardetails($id){
+    function getcardetail($id){
         $this->db->set('status', 'booking');
         $this->db->where('carId', $id);
         $this->db->where('status', 'available');

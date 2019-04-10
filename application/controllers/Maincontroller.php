@@ -23,7 +23,7 @@ class Maincontroller extends CI_Controller {
 	public function carbooking($carId)
 	{
 		$cars=new mainmodel();
-		$data['data']=$cars->getcardetails($carId);
+		$data['data']=$cars->getcardetail($carId);
 		$this->load->view('header');
 		$this->load->view('carbooking',$data);
 	}
@@ -35,6 +35,7 @@ class Maincontroller extends CI_Controller {
 		$data=array('carId'=>$id,'userId'=>$userId,'scheduledate'=>$scheduletime,'dropat'=>$droptime,'create_ts'=>date('Y-m-d h:m:s'));
 		$cars=new mainmodel();
 		$data['result']=$cars->booking($data);
+		
 		$this->load->view('messages',$data);
 	}
 
